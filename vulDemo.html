@@ -1,0 +1,17 @@
+<html>
+<head>
+  
+  <h1 style="text-align:center;color:rgb(0, 149, 255);">DOM-based XSS demo page</h1>
+  <script>
+    const queryString = location.search;
+    const urlParam = new URLSearchParams(queryString);
+    const path = urlParam.get('path');
+    //document.write('<h1> path =' + path + '</h1>')
+    document.write('<script src ="' + path + '"><\/script>')
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
